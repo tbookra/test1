@@ -27,7 +27,7 @@ const FilmCard = ({ data, setFavorsList, favorsList }) => {
             <div className="name">{data.show.name}</div>
             <div className="score">{data.score}</div>
           </div>
-          <div className="down">{data.show.type}</div>
+          <div className="down"><p>{data.show.type}</p></div>
         </div>
         <div className="rightSide">
           <img

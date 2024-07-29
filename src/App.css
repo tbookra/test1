@@ -30,7 +30,6 @@
 }
 .image {
   height: 100%;
-  width: 100px;
   border-radius: 5px;
   object-fit: contain;
 }
@@ -38,7 +37,7 @@
   cursor: pointer;
 }
 .details {
-  padding: 5px;
+  margin: 5px;
   flex: 1;
   display: flex;
   justify-content: space-between;
@@ -55,4 +54,10 @@
 }
 .score {
   font-size: 12px;
+}
+.down{
+  color:blueviolet;
+  font-weight: 700;
+  display: flex;
+  justify-content: flex-start;
 }

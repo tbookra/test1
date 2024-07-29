@@ -1,38 +1,31 @@
 import "./App.css";
-import axios from "axios";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import FilmCard from "./components/FilmCard";
+import { useSetFavorites } from "./hooks/useSetFavorites";
 
-const BASE_URL = "https://api.tvmaze.com/search/shows";
 
 function App() {
-  const [films, setFilms] = useState([]);
+  // const [films, setFilms] = useState([]);
   const [searchTxt, setSearchTxt] = useState("");
   const [favorsList, setFavorsList] = useState([]);
-
-  useEffect(() => {
-    fetchFilms(searchTxt);
-  }, [searchTxt]);
-  useEffect(() => {
-    const storedFavors = localStorage.getItem("favorList");
-    const parsedFavorates = storedFavors ? JSON.parse(storedFavors) : [];
-    setFavorsList(parsedFavorates);
-    // return () => localStorage.setItem("favorList", JSON.stringify(favorsList));
-  }, []);
+  const { films } = useSetFavorites(searchTxt, setFavorsList);
   // useEffect(() => {
-  //   console.log("favorsList55", favorsList);
-  //   localStorage.setItem("favorList", JSON.stringify(favorsList));
-  // }, [favorsList]);
+  //   fetchFilms(searchTxt);
+  // }, [searchTxt]);
+  // useEffect(() => {
+  //   const storedFavors = localStorage.getItem("favorList");
+  //   const parsedFavorates = storedFavors ? JSON.parse(storedFavors) : [];
+  //   setFavorsList(parsedFavorates);
+  // }, []);
 
   const handleChange = (e) => {
     setSearchTxt(e.target.value);
   };
-  const fetchFilms = async (txt) => {
-    const res = await axios.get(`${BASE_URL}?q=${txt}`);
-    setFilms(res?.data);
-    // console.log("res",res);
-  };
-  console.log("films", films);
+  // const fetchFilms = async (txt) => {
+  //   const res = await axios.get(`${BASE_URL}?q=${txt}`);
+  //   setFilms(res?.data);
+
+  // };
   return (
     <main className="App">
       <div>

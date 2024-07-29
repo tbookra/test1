@@ -1,11 +1,6 @@
-import { useEffect } from "react";
 
 const FilmCard = ({ data, setFavorsList, favorsList }) => {
-  //   useEffect(() => {
-  //     console.log("favorsList55", favorsList);
-  //     localStorage.setItem("favorList", JSON.stringify(favorsList));
-  //   }, [favorsList]);
-
+ 
   const handleClick = () => {
     if (favorsList.map((item) => item.show.id).includes(data.show.id)) {
       setFavorsList((prev) =>
@@ -23,7 +18,6 @@ const FilmCard = ({ data, setFavorsList, favorsList }) => {
       localStorage.setItem("favorList", JSON.stringify([...favorsList, data]));
     }
   };
-  console.log("favorsList", favorsList);
   return (
     <div className="card">
       <div className="image">
@@ -43,6 +37,7 @@ const FilmCard = ({ data, setFavorsList, favorsList }) => {
             onClick={handleClick}
             width={25}
             height={25}
+            alt="heart"
             src={
               favorsList.map((item) => item.show.id).includes(data.show.id)
                 ? "redHeart.png"

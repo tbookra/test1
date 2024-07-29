@@ -5,27 +5,15 @@ import { useSetFavorites } from "./hooks/useSetFavorites";
 
 
 function App() {
-  // const [films, setFilms] = useState([]);
   const [searchTxt, setSearchTxt] = useState("");
   const [favorsList, setFavorsList] = useState([]);
   const { films } = useSetFavorites(searchTxt, setFavorsList);
-  // useEffect(() => {
-  //   fetchFilms(searchTxt);
-  // }, [searchTxt]);
-  // useEffect(() => {
-  //   const storedFavors = localStorage.getItem("favorList");
-  //   const parsedFavorates = storedFavors ? JSON.parse(storedFavors) : [];
-  //   setFavorsList(parsedFavorates);
-  // }, []);
+ 
 
   const handleChange = (e) => {
     setSearchTxt(e.target.value);
   };
-  // const fetchFilms = async (txt) => {
-  //   const res = await axios.get(`${BASE_URL}?q=${txt}`);
-  //   setFilms(res?.data);
-
-  // };
+ 
   return (
     <main className="App">
       <div>

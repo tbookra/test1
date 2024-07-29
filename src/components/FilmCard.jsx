@@ -1,12 +1,10 @@
-
 const FilmCard = ({ data, setFavorsList, favorsList }) => {
- 
   const handleClick = () => {
     if (favorsList.map((item) => item.show.id).includes(data.show.id)) {
       setFavorsList((prev) =>
         prev.filter((film) => film.show.id !== data.show.id)
       );
-      
+
       localStorage.setItem(
         "favorList",
         JSON.stringify(

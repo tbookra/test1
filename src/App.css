@@ -1,60 +1,58 @@
 .App {
   text-align: center;
 }
-.container{
+.container {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  width: 900px
+  width: 900px;
 }
-.searchResults{
+.searchResults {
   width: 400px;
   display: flex;
   flex-direction: column;
   margin-top: 10px;
   margin-left: 10px;
 }
-.favors{
-  width:400px;
+.favors {
+  width: 400px;
   display: flex;
   flex-direction: column;
   margin-top: 10px;
   margin-left: 10px;
 }
-.card{
+.card {
   height: 150px;
   width: 350px;
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
 }
-.image{
+.image {
   height: 100%;
   width: 100px;
   border-radius: 5px;
   object-fit: contain;
-  
 }
-.heart{
+.heart {
   cursor: pointer;
 }
-.details{
-  /* width: 180px; */
+.details {
   padding: 5px;
-  flex:1;
+  flex: 1;
   display: flex;
   justify-content: space-between;
 }
-.leftSide{
-display: flex;
-flex-direction: column;
-justify-content: space-between;
+.leftSide {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
-.rightSide{
+.rightSide {
 }
-.name{
+.name {
   font-size: 18px;
 }
-.score{
+.score {
   font-size: 12px;
 }

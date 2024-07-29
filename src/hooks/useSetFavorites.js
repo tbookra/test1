@@ -3,7 +3,7 @@ import axios from "axios";
 
 const BASE_URL = "https://api.tvmaze.com/search/shows";
 
-export const useSetFavorites = (searchTxt,setFavorsList) => {
+export const useSetFavorites = (searchTxt, setFavorsList) => {
   const [films, setFilms] = useState([]);
 
   useEffect(() => {
@@ -19,5 +19,5 @@ export const useSetFavorites = (searchTxt,setFavorsList) => {
     const res = await axios.get(`${BASE_URL}?q=${txt}`);
     setFilms(res?.data);
   };
-  return {films}
+  return { films };
 };
